@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="535.0" prefWidth="613.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.group22_uber_2312262_2321374_2330201_2310256.ControllerClass.TrackPerformanceOfMarketingCampaignController">
+   <children>
+      <Button layoutX="340.0" layoutY="157.0" onAction="#filterDataButtonOnAction" prefHeight="25.0" prefWidth="222.0" text="FilterData" />
+      <DatePicker fx:id="toDatePicker" layoutX="391.0" layoutY="74.0" />
+      <Label fx:id="statusLabel" layoutX="19.0" layoutY="426.0" prefHeight="60.0" prefWidth="576.0" style="-fx-background-color: violet;" />
+      <ComboBox fx:id="selectCampaignCombobox" layoutX="124.0" layoutY="74.0" prefHeight="25.0" prefWidth="175.0" />
+      <DatePicker fx:id="fromDatePicker" layoutX="124.0" layoutY="111.0" />
+      <TableView fx:id="performanceTableView" layoutY="202.0" prefHeight="203.0" prefWidth="613.0">
+         <columns>
+            <TableColumn fx:id="dateRangeTableCol" prefWidth="202.00003051757812" text="Date Range" />
+            <TableColumn fx:id="likesTableCol" prefWidth="195.33331298828125" text="Likes" />
+            <TableColumn fx:id="commentsTableCol" prefWidth="203.333251953125" text="Comments" />
+         </columns>
+      </TableView>
+      <Label layoutX="192.0" layoutY="25.0" text="Campaign Performance">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="26.0" layoutY="78.0" text="selectCampaign:" />
+      <Label layoutX="26.0" layoutY="115.0" text="fromDate:" />
+      <Label layoutX="321.0" layoutY="78.0" text="toDate:" />
+      <Button layoutX="565.0" layoutY="495.0" mnemonicParsing="false" onAction="#backButtonOnAction" style="-fx-background-color: white;" text="&lt;-" />
+      <TextField fx:id="likesTextField" layoutX="389.0" layoutY="111.0" prefHeight="25.0" prefWidth="175.0" />
+      <Label layoutX="321.0" layoutY="115.0" text="Likes:" />
+      <TextField fx:id="commentsTextField" layoutX="124.0" layoutY="157.0" prefHeight="25.0" prefWidth="175.0" />
+      <Label layoutX="26.0" layoutY="161.0" text="comments:" />
+   </children>
+</AnchorPane>
