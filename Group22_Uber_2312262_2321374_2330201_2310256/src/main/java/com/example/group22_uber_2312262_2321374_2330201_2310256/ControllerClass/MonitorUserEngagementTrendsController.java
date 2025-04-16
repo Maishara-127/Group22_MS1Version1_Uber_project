@@ -2,7 +2,7 @@ package com.example.group22_uber_2312262_2321374_2330201_2310256.ControllerClass
 
 import com.example.group22_uber_2312262_2321374_2330201_2310256.ModelClass.EngagementData;
 import com.example.group22_uber_2312262_2321374_2330201_2310256.ModelClass.MarketingExecutive;
-import javafx.collections.FXCollections;
+
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -63,7 +63,7 @@ public class MonitorUserEngagementTrendsController {
         ArrayList<EngagementData> engagementDataList = marketingExecutive.monitorUserEngagement(selectedMetric, value);
 
         if (!engagementDataList.isEmpty()) {
-            tableView.getItems().setAll(engagementDataList);
+            tableView.getItems().addAll(engagementDataList);
             statusLabel.setText("Engagement data loaded.");
         } else {
             statusLabel.setText("No data found.");
