@@ -50,6 +50,7 @@ public class LogInPageController {
             }
         } catch (Exception e) {
             showAlert("Login Error!",  e.getMessage());
+            System.out.println(e.getMessage());
         }
     }
 
