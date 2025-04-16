@@ -11,9 +11,8 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
-
 import java.io.File;
-import java.io.FileWriter;
+import java.util.Scanner;
 
 
 public class BackUpImportantFilesController {
@@ -27,39 +26,31 @@ public class BackUpImportantFilesController {
     @FXML
     private Label statusLabel;
 
-    private File selectedFile;
 
     @FXML
     public void chooseFileButtonOnAction(ActionEvent actionEvent) {
-        FileChooser fileChooser = new FileChooser();
-        fileChooser.getExtensionFilters().add(new FileChooser.ExtensionFilter("Text_Files", "*.txt"));
-        Stage stage = (Stage) chooseFileButtonFxId.getScene().getWindow();
-        selectedFile = fileChooser.showOpenDialog(stage);
+        File f = null;
+        FileChooser fc = null;
+        Scanner sc = null;
 
-        if (selectedFile != null) {
-            selectFileLabel.setText("File Selected: " + selectedFile.getName());
-        } else {
-            selectFileLabel.setText("No file selected.");
+        try {
+            fc = new FileChooser();
+            f = fc.showOpenDialog(null);
+            sc = new Scanner(f);
+            while (sc.hasNextLine()) {
+                String Line = sc.nextLine();
+                System.out.println(Line);
+
+            }
+        } catch (Exception e) {
+
         }
     }
 
     @FXML
     public void startBackupButtonOnAction(ActionEvent actionEvent) {
-        if (selectedFile != null) {
-            try (FileWriter writer = new FileWriter("backup_" + selectedFile.getName())) {
-                writer.write("Backup of: " + selectedFile.getName());
-                FileChooser fileChooser = new FileChooser();
-                fileChooser.setTitle("Backup file");
-                fileChooser.getExtensionFilters().add(new FileChooser.ExtensionFilter("Text Files", "*.txt"));
-                File file = fileChooser.showSaveDialog(new Stage());
-                statusLabel.setText("Backup completed successfully!");
-            } catch (Exception e) {
-                statusLabel.setText("Something Error!");
-            }
-        } else {
-            statusLabel.setText("Please select a file first!");
+
         }
-    }
 
     @FXML
     public void backButtonOnAction(ActionEvent actionEvent) {
@@ -74,6 +65,7 @@ public class BackUpImportantFilesController {
             alert.setTitle("Error");
             alert.setContentText("Failed to load page " + "Error: " + e.getMessage());
             alert.showAndWait();
+
         }
     }
 }

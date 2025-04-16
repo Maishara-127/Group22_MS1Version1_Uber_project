@@ -18,6 +18,7 @@ public class CheckAppVersionAndUpdateController {
     @FXML
     private Label statusLabel;
 
+
     private CheckAppVersion checkAppVersion;
 
     public CheckAppVersionAndUpdateController() {
