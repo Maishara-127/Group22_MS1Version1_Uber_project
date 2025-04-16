@@ -1,7 +1,6 @@
 package com.example.group22_uber_2312262_2321374_2330201_2310256.ModelClass;
 
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.util.Scanner;
 
 public class SystemAdministrator {
@@ -84,5 +83,14 @@ public class SystemAdministrator {
             return isInstantRefundEnabled ? "Instant refund enabled." : "Instant refund disabled.";
         }
 
+    }
+
+    public boolean updateUserRole(User user, String newRole) {
+        if (user != null && newRole != null && !newRole.isEmpty()) {
+            user.setRole(newRole);
+            return true;
+        } else {
+            return false;
+        }
     }
 }
