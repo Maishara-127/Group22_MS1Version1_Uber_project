@@ -1,5 +1,6 @@
 package com.example.group22_uber_2312262_2321374_2330201_2310256.ControllerClass;
 
+import com.example.group22_uber_2312262_2321374_2330201_2310256.ModelClass.SystemAdministrator;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -12,7 +13,6 @@ import javafx.scene.control.Label;
 import javafx.stage.Stage;
 
 public class OptimizePaymentProcessingController {
-
     @FXML
     private CheckBox instantRefundCheckbox;
 
@@ -21,11 +21,10 @@ public class OptimizePaymentProcessingController {
 
     @FXML
     public void saveSettingButtonOnAction() {
-        if (instantRefundCheckbox.isSelected()) {
-            statusLabel.setText("Instant refund enabled.");
-        } else {
-            statusLabel.setText("Instant refund disabled.");
-        }
+        boolean isChecked = instantRefundCheckbox.isSelected();
+        SystemAdministrator systemAdministrator = new SystemAdministrator("admin", 123, "admin@uber.com", "1234567890");
+        String result = systemAdministrator.optimizePaymentProcessing(isChecked, false);
+        statusLabel.setText(result);
     }
 
     @FXML

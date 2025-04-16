@@ -2,7 +2,6 @@ package com.example.group22_uber_2312262_2321374_2330201_2310256.ModelClass;
 
 import java.io.File;
 import java.io.FileReader;
-import java.io.IOException;
 import java.util.Scanner;
 
 public class CheckAppVersion {
@@ -41,11 +40,11 @@ public class CheckAppVersion {
     }
 
     private String readVersionFromFile() {
-        File versionFile = new File("version.txt");
-        try (Scanner scanner = new Scanner(new FileReader(versionFile))) {
-            return scanner.next();
-        } catch (IOException e) {
-            e.printStackTrace();
+        File f = new File("version.txt");
+        try (Scanner sc = new Scanner(new FileReader(f))) {
+            return sc.next();
+        } catch (Exception e) {
+            e.getMessage();
         }
         return null;
     }

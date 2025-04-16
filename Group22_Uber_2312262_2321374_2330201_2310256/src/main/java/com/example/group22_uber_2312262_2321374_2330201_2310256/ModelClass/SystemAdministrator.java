@@ -1,6 +1,11 @@
 package com.example.group22_uber_2312262_2321374_2330201_2310256.ModelClass;
 
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.Scanner;
+
 public class SystemAdministrator {
+
     private String name;
     private Integer id;
     private String designation;
@@ -47,11 +52,37 @@ public class SystemAdministrator {
 
     @Override
     public String toString() {
-        return "MarketingExecutive{" +
+        return "SystemAdministrator{" +
                 "name='" + name + '\'' +
                 ", id=" + id +
                 ", designation='" + designation + '\'' +
                 ", email='" + email + '\'' +
                 '}';
+    }
+
+    public void backupImportantFile(File file) {
+        Scanner scanner = null;
+        try {
+            scanner = new Scanner(file);
+            while (scanner.hasNextLine()) {
+                String line = scanner.nextLine();
+                System.out.println(line);
+            }
+        } catch (Exception e) {
+            e.getMessage();
+        } finally {
+            if (scanner != null) {
+                scanner.close();
+            }
+        }
+    }
+
+    public String optimizePaymentProcessing(boolean isInstantRefundEnabled, boolean isTest) {
+        if (isTest) {
+            return isInstantRefundEnabled ? "Refund processed instantly." : "Refund will be processed later.";
+        } else {
+            return isInstantRefundEnabled ? "Instant refund enabled." : "Instant refund disabled.";
+        }
+
     }
 }
