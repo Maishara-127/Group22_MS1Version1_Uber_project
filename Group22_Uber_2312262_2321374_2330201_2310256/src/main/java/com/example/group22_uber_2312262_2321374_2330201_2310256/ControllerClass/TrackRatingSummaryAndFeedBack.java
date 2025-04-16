@@ -22,7 +22,7 @@ import javafx.stage.Stage;
 import java.time.LocalDate;
 import java.util.ArrayList;
 
-public class TrackPerformanceOfMarketingCampaignController {
+public class TrackRatingSummaryAndFeedBack {
     @FXML
     private TableColumn<CampaignPerformance, Integer> likesTableCol;
     @FXML

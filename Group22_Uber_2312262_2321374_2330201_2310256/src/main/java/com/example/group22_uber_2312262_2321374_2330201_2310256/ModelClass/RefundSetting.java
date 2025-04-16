@@ -23,11 +23,4 @@ public class RefundSetting {
                 '}';
     }
 
-    public String simulateRefund() {
-        if (instantRefundEnabled) {
-            return "Test refund successful and notification sent.";
-        } else {
-            return "Instant refund is disabled. Enable it first.";
-        }
-    }
 }
