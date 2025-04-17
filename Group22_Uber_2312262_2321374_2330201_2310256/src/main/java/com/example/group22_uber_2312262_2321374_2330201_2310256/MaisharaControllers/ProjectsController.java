@@ -1,5 +1,6 @@
-package com.example.group22_uber_2312262_2321374_2330201_2310256;
+package com.example.group22_uber_2312262_2321374_2330201_2310256.MaisharaControllers;
 
+import com.example.group22_uber_2312262_2321374_2330201_2310256.MaisharaModelClasses.Project;
 import javafx.event.ActionEvent;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.DatePicker;
@@ -7,9 +8,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 
 import java.io.FileInputStream;
-import java.io.FileOutputStream;
 import java.io.ObjectInputStream;
-import java.io.ObjectOutputStream;
 import java.util.ArrayList;
 
 public class ProjectsController
