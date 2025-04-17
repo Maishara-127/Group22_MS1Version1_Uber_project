@@ -1,2 +1,0 @@
-Uptime: 99.9%
-Status: No major outage detected.

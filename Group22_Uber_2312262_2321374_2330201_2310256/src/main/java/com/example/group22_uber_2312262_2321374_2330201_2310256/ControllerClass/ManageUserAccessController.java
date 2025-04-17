@@ -65,13 +65,12 @@ public class ManageUserAccessController implements Serializable {
 
             String newRole = roleComboBox.getValue();
             if (newRole == null || newRole.isEmpty()) {
-                if (newRole == null || newRole.isEmpty()) {
-                    return;
-                }
+                return;
+
 
             } else {
                 SystemAdministrator systemAdmin = new SystemAdministrator("Arpy", 111, "arpy@uber.com", "Admin");
-                systemAdmin.updateUserRole(selectedUser, newRole);
+                systemAdmin.manageUserAccess(selectedUser, newRole);
                 statusLabel.setText("Role Updated!");
 
             }

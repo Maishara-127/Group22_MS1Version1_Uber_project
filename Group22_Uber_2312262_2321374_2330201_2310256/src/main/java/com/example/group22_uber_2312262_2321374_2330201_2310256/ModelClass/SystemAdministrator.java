@@ -1,9 +1,7 @@
 package com.example.group22_uber_2312262_2321374_2330201_2310256.ModelClass;
+import java.io.*;import java.util.Scanner;
 
-import java.io.File;
-import java.util.Scanner;
-
-public class SystemAdministrator {
+public class SystemAdministrator implements Serializable {
 
     private String name;
     private Integer id;
@@ -85,11 +83,22 @@ public class SystemAdministrator {
 
     }
 
-    public boolean updateUserRole(User user, String newRole) {
+    public boolean manageUserAccess(User user, String newRole) {
         if (user != null && newRole != null && !newRole.isEmpty()) {
             user.setRole(newRole);
             return true;
         } else {
+            return false;
+        }
+    }
+
+    public boolean checkSystemUptime(UptimeReport report, File reportFile) {
+        try (FileOutputStream fos = new FileOutputStream(reportFile);
+             ObjectOutputStream oos = new ObjectOutputStream(fos)) {
+            oos.writeObject(report);
+            return true;
+        } catch (Exception e) {
+            System.out.println("Error saving report: " + e.getMessage());
             return false;
         }
     }
