@@ -59,7 +59,7 @@ public class BackUpImportantFilesController
             }
         } catch (Exception e) {
             statusLabel.setText("Error: " + e.getMessage());
-            e.printStackTrace();
+
         }
     }
 

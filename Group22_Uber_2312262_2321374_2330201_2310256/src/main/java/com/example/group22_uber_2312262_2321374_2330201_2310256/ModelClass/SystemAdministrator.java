@@ -2,8 +2,9 @@ package com.example.group22_uber_2312262_2321374_2330201_2310256.ModelClass;
 
 import java.io.File;
 import java.util.Scanner;
+import java.io.Serializable;
 
-public class SystemAdministrator {
+public class SystemAdministrator implements Serializable{
 
     private String name;
     private Integer id;
@@ -85,7 +86,7 @@ public class SystemAdministrator {
 
     }
 
-    public boolean updateUserRole(User user, String newRole) {
+    public boolean manageUserAccess(User user, String newRole) {
         if (user != null && newRole != null && !newRole.isEmpty()) {
             user.setRole(newRole);
             return true;

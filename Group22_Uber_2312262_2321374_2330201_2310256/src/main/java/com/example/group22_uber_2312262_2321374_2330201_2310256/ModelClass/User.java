@@ -1,6 +1,8 @@
 package com.example.group22_uber_2312262_2321374_2330201_2310256.ModelClass;
 
-public class User {
+import java.io.Serializable;
+
+public class User implements Serializable{
     private String name;
     private String id;
     private String email;
