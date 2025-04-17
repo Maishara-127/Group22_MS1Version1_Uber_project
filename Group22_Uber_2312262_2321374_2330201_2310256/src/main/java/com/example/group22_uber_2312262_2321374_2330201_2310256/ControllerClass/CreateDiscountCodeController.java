@@ -13,6 +13,8 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
+import java.io.*;
+
 public class CreateDiscountCodeController {
     @javafx.fxml.FXML
     private TextField discountPercentageTextField;
@@ -46,12 +48,36 @@ public class CreateDiscountCodeController {
                 statusLabel.setText("Invalid input. Percentage must be > 0 and ≤ 100.");
             } else {
                 statusLabel.setText("Discount applied successfully.");
+
+                File f = null;
+                FileOutputStream fis = null;
+                ObjectOutputStream oos = null;
+                try{
+                    f = new File("Discount.bin");
+                    fis = new FileOutputStream(f);
+                    oos = new ObjectOutputStream(fis);
+                    oos.writeObject(discount);
+                    oos.close();
+                    fis.close();
+                } catch (Exception e) {
+                    e.getMessage();
+                } finally {
+                    try {
+                        if (oos != null) oos.close();
+                        if (fis != null) fis.close();
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+                }
             }
 
         } catch (NumberFormatException e) {
             statusLabel.setText("Please enter a valid number for percentage.");
         }
-    }    public void backButtonOnAction(ActionEvent actionEvent) {
+    }
+
+    @FXML
+    public void backButtonOnAction(ActionEvent actionEvent) {
         try {
             Parent root = FXMLLoader.load(getClass().getResource("/com/example/group22_uber_2312262_2321374_2330201_2310256/marketingExecutivePageView.fxml"));
             Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
@@ -65,4 +91,6 @@ public class CreateDiscountCodeController {
             alert.showAndWait();
         }
     }
+
+
 }
