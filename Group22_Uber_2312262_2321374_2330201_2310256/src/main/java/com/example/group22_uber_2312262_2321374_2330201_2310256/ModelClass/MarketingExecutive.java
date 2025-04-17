@@ -111,12 +111,20 @@ public class MarketingExecutive {
         return null;
     }
 
-    public ArrayList<EngagementData> monitorUserEngagement(String metric, String value) {
-        ArrayList<EngagementData> engagementDataList = new ArrayList<>();
-        EngagementData data = new EngagementData(LocalDate.now(), metric, value);
-        engagementDataList.add(data);
-        return engagementDataList;
+    public ArrayList<UserEngagementTrend> MonitorUserEngagementTrends(LocalDate startDate, LocalDate endDate) {
+        ArrayList<UserEngagementTrend> allTrends = DummyEngagementData.getDummyTrends();
+        ArrayList<UserEngagementTrend> filtered = new ArrayList<>();
+
+        for (UserEngagementTrend trend : allTrends) {
+            if ((trend.getRideDate().isEqual(startDate) || trend.getRideDate().isAfter(startDate)) &&
+                    (trend.getRideDate().isEqual(endDate) || trend.getRideDate().isBefore(endDate))) {
+                filtered.add(trend);
+            }
+        }
+
+        return filtered;
     }
+
 
     public ArrayList<CampaignPerformance> trackCampaignPerformance() {
         ArrayList<CampaignPerformance> campaignPerformanceList = new ArrayList<>();

@@ -1,8 +1,8 @@
 package com.example.group22_uber_2312262_2321374_2330201_2310256.ControllerClass;
 
-import com.example.group22_uber_2312262_2321374_2330201_2310256.ModelClass.EngagementData;
-import com.example.group22_uber_2312262_2321374_2330201_2310256.ModelClass.MarketingExecutive;
 
+import com.example.group22_uber_2312262_2321374_2330201_2310256.ModelClass.MarketingExecutive;
+import com.example.group22_uber_2312262_2321374_2330201_2310256.ModelClass.UserEngagementTrend;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -15,6 +15,9 @@ import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.ObjectOutputStream;
 import java.time.LocalDate;
 import java.util.ArrayList;
 
@@ -23,53 +26,75 @@ public class MonitorUserEngagementTrendsController {
     @FXML
     private DatePicker endDatePicker;
     @FXML
-    private TableColumn<EngagementData, String> metricNameCol;
-    @FXML
-    private TableColumn<EngagementData, LocalDate> dateCol;
-    @FXML
-    private ComboBox<String> metricCombobox;
+    private TableColumn<UserEngagementTrend, LocalDate> dateCol;
     @FXML
     private DatePicker startDatePicker;
     @FXML
-    private TableView<EngagementData> tableView;
-    @FXML
-    private TableColumn<EngagementData, String> valueCol;
+    private TableView<UserEngagementTrend> tableView;
     @FXML
     private Label statusLabel;
     @FXML
-    private TextField valueTextField;
+    private TableColumn nameCol;
+    @FXML
+    private TableColumn durationCol;
 
     @FXML
     public void initialize() {
 
-        metricCombobox.getItems().addAll("Session Duration", "Click-Through Rate", "Interactions", "Sessions");
+        nameCol.setCellValueFactory(new PropertyValueFactory<>("passengerName"));
+        dateCol.setCellValueFactory(new PropertyValueFactory<>("rideDate"));
+        durationCol.setCellValueFactory(new PropertyValueFactory<>("rideDurationInMinutes"));
 
-        dateCol.setCellValueFactory(new PropertyValueFactory<>("date"));
-        metricNameCol.setCellValueFactory(new PropertyValueFactory<>("metricName"));
-        valueCol.setCellValueFactory(new PropertyValueFactory<>("value"));
+
     }
 
     @FXML
     public void showOnTableViewAndSaveReportButtonOnAction(ActionEvent actionEvent) {
-        String selectedMetric = metricCombobox.getValue();
-        String value = valueTextField.getText();
+        LocalDate start = startDatePicker.getValue();
+        LocalDate end = endDatePicker.getValue();
 
-        if (selectedMetric == null || value == null || value.isEmpty()) {
-            statusLabel.setText("Please select a metric and input a value.");
+        if (start == null || end == null) {
+            statusLabel.setText("Please select both start and end dates.");
             return;
         }
 
-        MarketingExecutive marketingExecutive = new MarketingExecutive();
-        ArrayList<EngagementData> engagementDataList = marketingExecutive.monitorUserEngagement(selectedMetric, value);
+        MarketingExecutive executive = new MarketingExecutive();
+        ArrayList<UserEngagementTrend> filteredList = executive.MonitorUserEngagementTrends(start, end);
 
-        if (!engagementDataList.isEmpty()) {
-            tableView.getItems().addAll(engagementDataList);
-            statusLabel.setText("Engagement data loaded.");
+        if (!filteredList.isEmpty()) {
+            tableView.getItems().clear();
+            tableView.getItems().addAll(filteredList);
+            statusLabel.setText("Data loaded for selected date range.");
+
+            File f = null;
+            FileOutputStream fos = null;
+            ObjectOutputStream oos = null;
+
+            try{
+                f = new File("rideReport.bin");
+                fos = new FileOutputStream(f);
+                oos = new ObjectOutputStream(fos);
+                oos.writeObject(filteredList);
+                oos.close();
+                fos.close();
+            }catch(Exception e){
+                e.getMessage();
+            }finally{
+                try{
+                    oos.close();
+                    fos.close();
+                }catch(Exception e){
+                    e.getMessage();
+                }
+
+            }
+
         } else {
-            statusLabel.setText("No data found.");
+            tableView.getItems().clear();
+            statusLabel.setText("No data found in the selected date range.");
         }
-    }
 
+    }
     @FXML
     public void backButtonOnAction(ActionEvent actionEvent) {
         try {
