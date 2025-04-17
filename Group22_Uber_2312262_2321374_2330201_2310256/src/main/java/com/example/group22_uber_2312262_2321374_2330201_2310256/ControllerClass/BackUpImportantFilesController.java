@@ -36,7 +36,8 @@ public class BackUpImportantFilesController
         try {
             f = fc.showOpenDialog(null);
             if (f != null) {
-                System.out.println("Selected file: " + f.getAbsolutePath());
+                selectedFile = f;
+                selectFileLabel.setText(f.getName());
             }
         } catch (Exception e) {
             e.getMessage();
