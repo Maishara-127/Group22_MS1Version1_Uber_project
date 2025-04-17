@@ -8,6 +8,7 @@ public class UserDummyClass {
     static {
         userList.add(new User("Nujat", "123", "nujatehasnat@uber.com", "Marketing Executive"));
         userList.add(new User("Arif", "456", "arif@uber.com", "System Administrator"));
+
     }
 
 
