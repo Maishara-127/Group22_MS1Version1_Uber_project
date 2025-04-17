@@ -29,8 +29,8 @@ public class LogInPageController {
 
     @FXML
     public void loginButtonOnAction(ActionEvent event) {
-        String userId = userIdTextField.getText().trim();
-        String password = passwordField.getText().trim();
+        String userId = userIdTextField.getText();
+        String password = passwordField.getText();
 
         try {
             if (userId.equals(marketingExecutiveID) && password.equals(marketingExecutivePassword)) {
