@@ -1,9 +1,5 @@
 package com.example.group22_uber_2312262_2321374_2330201_2310256.ModelClass;
 
-import java.io.File;
-import java.io.FileReader;
-import java.util.Scanner;
-
 public class CheckAppVersion {
     private String currentVersion;
 
@@ -27,7 +23,7 @@ public class CheckAppVersion {
     }
 
     public String checkForUpdates() {
-        String latestVersion = readVersionFromFile();
+        String latestVersion = getCurrentVersion();
         if (latestVersion != null) {
             if (currentVersion.equals(latestVersion)) {
                 return "You are using the latest version.";
@@ -39,13 +35,4 @@ public class CheckAppVersion {
         }
     }
 
-    private String readVersionFromFile() {
-        File f = new File("version.txt");
-        try (Scanner sc = new Scanner(new FileReader(f))) {
-            return sc.next();
-        } catch (Exception e) {
-            e.getMessage();
-        }
-        return null;
-    }
 }

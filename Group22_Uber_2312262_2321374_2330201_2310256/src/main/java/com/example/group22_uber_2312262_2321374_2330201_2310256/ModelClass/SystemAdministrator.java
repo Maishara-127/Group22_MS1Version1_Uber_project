@@ -95,11 +95,16 @@ public class SystemAdministrator implements Serializable {
     public boolean checkSystemUptime(UptimeReport report, File reportFile) {
         try (FileOutputStream fos = new FileOutputStream(reportFile);
              ObjectOutputStream oos = new ObjectOutputStream(fos)) {
-            oos.writeObject(report);
+             oos.writeObject(report);
             return true;
         } catch (Exception e) {
             System.out.println("Error saving report: " + e.getMessage());
             return false;
         }
+    }
+
+    public String checkAppVersionAndUpdate() {
+        CheckAppVersion appVersion = new CheckAppVersion();
+        return appVersion.checkForUpdates();
     }
 }
