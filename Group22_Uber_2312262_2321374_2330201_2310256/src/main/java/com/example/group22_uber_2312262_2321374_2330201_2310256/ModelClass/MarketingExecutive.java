@@ -125,4 +125,11 @@ public class MarketingExecutive {
         return campaignPerformanceList;
     }
 
+    public EngagementBudget adjustMarketingBudget(double digitalAdsBudget, double promotionsBudget) {
+        if (digitalAdsBudget < 0 || promotionsBudget < 0) {
+            return null;
+        }
+        return new EngagementBudget(digitalAdsBudget, promotionsBudget);
+    }
+
 }
