@@ -57,8 +57,8 @@ public class MonitorUserEngagementTrendsController {
             return;
         }
 
-        MarketingExecutive executive = new MarketingExecutive();
-        ArrayList<UserEngagementTrend> filteredList = executive.MonitorUserEngagementTrends(start, end);
+        MarketingExecutive marketingExecutive = new MarketingExecutive();
+        ArrayList<UserEngagementTrend> filteredList = marketingExecutive.MonitorUserEngagementTrends(start, end);
 
         if (!filteredList.isEmpty()) {
             tableView.getItems().clear();
