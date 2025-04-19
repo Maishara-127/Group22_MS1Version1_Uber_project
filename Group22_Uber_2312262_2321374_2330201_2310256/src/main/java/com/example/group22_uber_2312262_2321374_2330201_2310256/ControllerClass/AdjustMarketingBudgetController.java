@@ -1,6 +1,7 @@
 package com.example.group22_uber_2312262_2321374_2330201_2310256.ControllerClass;
 
 import com.example.group22_uber_2312262_2321374_2330201_2310256.ModelClass.EngagementBudget;
+import com.example.group22_uber_2312262_2321374_2330201_2310256.ModelClass.MarketingExecutive;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -29,16 +30,21 @@ public class AdjustMarketingBudgetController {
             double digitalAdsValue = Double.parseDouble(digitalAdsInput);
             double promotionsValue = Double.parseDouble(promotionsInput);
 
-            EngagementBudget newBudget = new EngagementBudget(digitalAdsValue, promotionsValue);
+            MarketingExecutive marketingExecutive = new MarketingExecutive();
+            EngagementBudget newBudget = marketingExecutive.adjustMarketingBudget(digitalAdsValue, promotionsValue);
 
-            statusLabel.setText("Budget has been successfully updated!");
-            digitalAddsBudgetTextField.clear();
-            promotionBudgetTextField.clear();
+            if (newBudget != null) {
+                statusLabel.setText("Budget successfully updated:" + newBudget.toString());
+                digitalAddsBudgetTextField.clear();
+                promotionBudgetTextField.clear();
+            } else {
+                statusLabel.setText("Invalid budget values. Please enter non-negative numbers.");
+            }
 
-        } catch (Exception e) {
+        } catch (NumberFormatException e) {
             Alert alert = new Alert(Alert.AlertType.ERROR);
-            alert.setTitle("Error");
-            alert.setContentText("Please enter valid number.");
+            alert.setTitle("Invalid Input");
+            alert.setContentText("Please enter valid numeric values.");
             alert.showAndWait();
         }
     }

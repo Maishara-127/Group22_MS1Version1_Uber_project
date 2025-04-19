@@ -1,5 +1,7 @@
 package com.example.group22_uber_2312262_2321374_2330201_2310256.ModelClass;
-import java.io.*;import java.util.Scanner;
+import java.io.*;
+import java.util.ArrayList;
+import java.util.Scanner;
 
 public class SystemAdministrator implements Serializable {
 
@@ -95,11 +97,28 @@ public class SystemAdministrator implements Serializable {
     public boolean checkSystemUptime(UptimeReport report, File reportFile) {
         try (FileOutputStream fos = new FileOutputStream(reportFile);
              ObjectOutputStream oos = new ObjectOutputStream(fos)) {
-            oos.writeObject(report);
+             oos.writeObject(report);
             return true;
         } catch (Exception e) {
             System.out.println("Error saving report: " + e.getMessage());
             return false;
         }
+    }
+
+    public String checkAppVersionAndUpdate() {
+        CheckAppVersion appVersion = new CheckAppVersion();
+        return appVersion.checkForUpdates();
+    }
+
+    public String checkSecurityLogs(String criteria) {
+        ArrayList<SecurityLogEntry> logs = DummySecurityLogData.getLogs();
+        String result = " ";
+
+        for (SecurityLogEntry log : logs) {
+            if (criteria == null || log.getLog().contains(criteria)) {
+                result += log.getLog() + "\n";
+            }
+        }
+        return result;
     }
 }

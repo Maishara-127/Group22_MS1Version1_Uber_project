@@ -1,6 +1,6 @@
 package com.example.group22_uber_2312262_2321374_2330201_2310256.ControllerClass;
 
-import com.example.group22_uber_2312262_2321374_2330201_2310256.ModelClass.SecurityLogs;
+import com.example.group22_uber_2312262_2321374_2330201_2310256.ModelClass.SystemAdministrator;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -21,17 +21,19 @@ public class CheckSecurityLogsViewController {
     @FXML
     private Label statusLabel;
 
-    private SecurityLogs securityLogs = new SecurityLogs();
+    private SystemAdministrator systemAdministrator = new SystemAdministrator("Admin", 1, "System Admin", "admin@uber.com");
 
     @FXML
     public void openSecurityLogButtonOnAction(ActionEvent actionEvent) {
-        logsLabel.setText(securityLogs.getSecurityLogs());
+        String logs = systemAdministrator.checkSecurityLogs(null); // No criteria for fetching all logs
+        logsLabel.setText(logs);
         statusLabel.setText("Logs fetched.");
     }
 
     @FXML
     public void filterLogsButtonOnAction(ActionEvent actionEvent) {
-        String filteredLogs = securityLogs.filterLogs(filterCriteriaTextField.getText());
+        String criteria = filterCriteriaTextField.getText();
+        String filteredLogs = systemAdministrator.checkSecurityLogs(criteria);
         logsLabel.setText(filteredLogs);
         statusLabel.setText("Logs filtered.");
     }

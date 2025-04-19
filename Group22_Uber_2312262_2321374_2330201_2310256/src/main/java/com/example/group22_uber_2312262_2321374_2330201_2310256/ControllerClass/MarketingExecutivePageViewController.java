@@ -33,7 +33,7 @@ public class MarketingExecutivePageViewController {
     @javafx.fxml.FXML
     public void TrackPerformanceMarketingCampaignButtonOnAction(ActionEvent event) {
         try {
-            Parent root = FXMLLoader.load(getClass().getResource("/com/example/group22_uber_2312262_2321374_2330201_2310256/trackRatingSummaryAndFeedBack.fxml"));
+            Parent root = FXMLLoader.load(getClass().getResource("/com/example/group22_uber_2312262_2321374_2330201_2310256/trackRatingAndFeedBackView.fxml"));
             Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
             stage.setTitle("Track Marketing Performance");
             stage.setScene(new Scene(root));

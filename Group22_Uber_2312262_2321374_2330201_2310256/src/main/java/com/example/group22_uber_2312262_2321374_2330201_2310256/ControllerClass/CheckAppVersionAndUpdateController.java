@@ -1,6 +1,7 @@
 package com.example.group22_uber_2312262_2321374_2330201_2310256.ControllerClass;
 
 import com.example.group22_uber_2312262_2321374_2330201_2310256.ModelClass.CheckAppVersion;
+import com.example.group22_uber_2312262_2321374_2330201_2310256.ModelClass.SystemAdministrator;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -27,13 +28,18 @@ public class CheckAppVersionAndUpdateController {
 
     @FXML
     public void initialize() {
+
         versionLabel.setText("Current Version: " + checkAppVersion.getCurrentVersion());
     }
 
     @FXML
+    private SystemAdministrator systemAdministrator;
+
+    @FXML
     public void checkUpdateButtonOnAction(ActionEvent actionEvent) {
-        String updateStatus = checkAppVersion.checkForUpdates();
-        statusLabel.setText(updateStatus);
+        SystemAdministrator systemAdministrator = new SystemAdministrator("Arpy", 111, "System Administrator", "Arpy@uber.com");
+        systemAdministrator.checkAppVersionAndUpdate();
+        statusLabel.setText("Update check completed");
     }
 
     @FXML
