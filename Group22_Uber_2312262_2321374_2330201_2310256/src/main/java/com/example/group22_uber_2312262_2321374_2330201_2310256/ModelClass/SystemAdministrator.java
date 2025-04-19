@@ -119,7 +119,6 @@ public class SystemAdministrator implements Serializable {
                 result += log.getLog() + "\n";
             }
         }
-
-        return result.isEmpty() ? "No matching logs." : result;
+        return result;
     }
 }

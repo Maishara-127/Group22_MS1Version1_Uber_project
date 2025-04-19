@@ -1,11 +1,12 @@
 package com.example.group22_uber_2312262_2321374_2330201_2310256.ControllerClass;
 
+import com.example.group22_uber_2312262_2321374_2330201_2310256.ModelClass.RatingFeedback;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Alert;
+import javafx.scene.control.*;
 import javafx.stage.Stage;
 
 public class TrackRatingAndFeedBackController
@@ -13,15 +14,15 @@ public class TrackRatingAndFeedBackController
     @javafx.fxml.FXML
     private TextField filterTextField;
     @javafx.fxml.FXML
-    private TableColumn ratingCol;
+    private TableColumn<RatingFeedback, Integer> ratingCol;
     @javafx.fxml.FXML
     private Label statusLabel;
     @javafx.fxml.FXML
-    private TableColumn userCol;
+    private TableColumn<RatingFeedback, String> userCol;
     @javafx.fxml.FXML
-    private TableColumn feedBackCol;
+    private TableColumn<RatingFeedback, String> feedBackCol;
     @javafx.fxml.FXML
-    private TableView tableView;
+    private TableView<RatingFeedback> tableView;
 
     @javafx.fxml.FXML
     public void initialize() {

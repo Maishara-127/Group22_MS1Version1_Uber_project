@@ -125,19 +125,16 @@ public class MarketingExecutive {
         return filtered;
     }
 
-
-    public ArrayList<CampaignPerformance> trackCampaignPerformance() {
-        ArrayList<CampaignPerformance> campaignPerformanceList = new ArrayList<>();
-        CampaignPerformance performance = new CampaignPerformance(0, 0, LocalDate.now());
-        campaignPerformanceList.add(performance);
-        return campaignPerformanceList;
-    }
-
     public EngagementBudget adjustMarketingBudget(double digitalAdsBudget, double promotionsBudget) {
         if (digitalAdsBudget < 0 || promotionsBudget < 0) {
             return null;
         }
         return new EngagementBudget(digitalAdsBudget, promotionsBudget);
     }
+
+    public void trackRatingAndFeedback(String feedback){
+        
+    }
+
 
 }
