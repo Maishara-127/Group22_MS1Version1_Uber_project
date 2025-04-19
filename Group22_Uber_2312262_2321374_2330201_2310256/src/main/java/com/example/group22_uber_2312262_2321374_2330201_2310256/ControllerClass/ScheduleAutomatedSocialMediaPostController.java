@@ -1,7 +1,6 @@
 package com.example.group22_uber_2312262_2321374_2330201_2310256.ControllerClass;
 
 import com.example.group22_uber_2312262_2321374_2330201_2310256.ModelClass.MarketingExecutive;
-import com.example.group22_uber_2312262_2321374_2330201_2310256.ModelClass.SocialMediaPost;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;

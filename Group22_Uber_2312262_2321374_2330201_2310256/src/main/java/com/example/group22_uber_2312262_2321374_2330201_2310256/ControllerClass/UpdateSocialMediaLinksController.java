@@ -38,7 +38,7 @@ public class UpdateSocialMediaLinksController {
         boolean isValid = marketingExecutive.updateSocialMediaLink(url);
 
         if (isValid) {
-            statusLabel.setText("URL updated successfully for " + platform + "!");
+            statusLabel.setText("URL updated successfully!");
         } else {
             statusLabel.setText("Invalid URL! Please enter a valid URL.");
         }

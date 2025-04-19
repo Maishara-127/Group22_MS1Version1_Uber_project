@@ -34,7 +34,7 @@ public class AdjustMarketingBudgetController {
             EngagementBudget newBudget = marketingExecutive.adjustMarketingBudget(digitalAdsValue, promotionsValue);
 
             if (newBudget != null) {
-                statusLabel.setText("Budget successfully updated:" + newBudget.toString());
+                statusLabel.setText("Budget successfully updated");
                 digitalAddsBudgetTextField.clear();
                 promotionBudgetTextField.clear();
             } else {

@@ -21,7 +21,6 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 
 public class MonitorUserEngagementTrendsController {
-
     @FXML
     private DatePicker endDatePicker;
     @FXML
@@ -33,9 +32,9 @@ public class MonitorUserEngagementTrendsController {
     @FXML
     private Label statusLabel;
     @FXML
-    private TableColumn nameCol;
+    private TableColumn<UserEngagementTrend,String> nameCol;
     @FXML
-    private TableColumn durationCol;
+    private TableColumn<UserEngagementTrend,Double> durationCol;
 
     @FXML
     public void initialize() {

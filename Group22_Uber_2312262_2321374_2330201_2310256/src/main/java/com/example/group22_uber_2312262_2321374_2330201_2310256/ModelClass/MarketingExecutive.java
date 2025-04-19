@@ -1,5 +1,7 @@
 package com.example.group22_uber_2312262_2321374_2330201_2310256.ModelClass;
 
+import java.io.FileInputStream;
+import java.io.ObjectInputStream;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
@@ -132,8 +134,18 @@ public class MarketingExecutive {
         return new EngagementBudget(digitalAdsBudget, promotionsBudget);
     }
 
-    public void trackRatingAndFeedback(String feedback){
-        
+    public ArrayList<RatingFeedback> trackRatingFeedback() {
+        ArrayList<RatingFeedback> feedbackList = new ArrayList<>();
+        FileInputStream fis = null;
+        ObjectInputStream ois = null;
+        try {
+            fis = new FileInputStream("ratingfeedback.bin");
+            ois = new ObjectInputStream(fis);
+            feedbackList = (ArrayList<RatingFeedback>) ois.readObject();
+        } catch (Exception e) {
+            e.getMessage();
+        }
+        return feedbackList;
     }
 
 
