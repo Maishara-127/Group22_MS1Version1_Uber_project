@@ -59,13 +59,19 @@ public class SystemAdministrator implements Serializable {
                 '}';
     }
 
-    public void backupImportantFile(File file) {
+    public void backupImportantFile(File selectedFile) {
         Scanner scanner = null;
+        FileOutputStream fos = null;
+        ObjectOutputStream oos = null;
         try {
-            scanner = new Scanner(file);
+            scanner = new Scanner(selectedFile);
+            fos = new FileOutputStream(selectedFile.getName() + "_backup");
+            oos = new ObjectOutputStream(fos);
+
             while (scanner.hasNextLine()) {
                 String line = scanner.nextLine();
                 System.out.println(line);
+                oos.writeObject(line);
             }
         } catch (Exception e) {
             e.getMessage();
@@ -73,9 +79,22 @@ public class SystemAdministrator implements Serializable {
             if (scanner != null) {
                 scanner.close();
             }
+            if (oos != null) {
+                try {
+                    oos.close();
+                } catch (IOException e) {
+                    e.getMessage();
+                }
+            }
+            if (fos != null) {
+                try {
+                    fos.close();
+                } catch (IOException e) {
+                    e.getMessage();
+                }
+            }
         }
     }
-
     public String optimizePaymentProcessing(boolean isInstantRefundEnabled, boolean isTest) {
         if (isTest) {
             return isInstantRefundEnabled ? "Refund processed instantly." : "Refund will be processed later.";

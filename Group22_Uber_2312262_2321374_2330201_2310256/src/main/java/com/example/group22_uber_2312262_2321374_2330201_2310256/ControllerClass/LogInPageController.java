@@ -20,10 +20,16 @@ public class LogInPageController {
     @FXML
     private PasswordField passwordField;
 
-    private final String marketingExecutiveID = "Admin123";
-    private final String marketingExecutivePassword = "123";
-    private final String systemAdminID = "Admin456";
-    private final String systemAdminPassword = "456";
+    private  String marketingExecutiveID = "Executive123";
+    private  String marketingExecutivePassword = "123";
+    private  String systemAdminID = "Admin123";
+    private  String systemAdminPassword = "123";
+    private  String OperationManagerID = "OperationManager123";
+    private String OperationManagerPassword = "123";
+    private  String DriverID = "Driver123";
+    private String DriverPassword = "123";
+    private  String PassengerID = "Passenger123";
+    private String PassengerPassword = "123";
     @FXML
     private AnchorPane popUpAnchorPane;
 
@@ -45,7 +51,25 @@ public class LogInPageController {
                 stage.setTitle("System Administrator Dashboard");
                 stage.setScene(new Scene(root));
                 stage.show();
-            } else {
+            }else if (userId.equals(OperationManagerID) && password.equals(OperationManagerPassword)) {
+                Parent root = FXMLLoader.load(getClass().getResource("/com/example/group22_uber_2312262_2321374_2330201_2310256/OperationsManagerDashboardView.fxml"));
+                Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+                stage.setTitle("System Administrator Dashboard");
+                stage.setScene(new Scene(root));
+                stage.show();
+            }else if (userId.equals(DriverID) && password.equals(DriverPassword)) {
+                Parent root = FXMLLoader.load(getClass().getResource("/com/example/finalmainproject/driverDashboardView.fxml"));
+                Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+                stage.setTitle("System Administrator Dashboard");
+                stage.setScene(new Scene(root));
+                stage.show();
+            }else if (userId.equals(PassengerID) && password.equals(PassengerPassword)) {
+                Parent root = FXMLLoader.load(getClass().getResource("/com/example/finalmainproject/passengerDashboardView.fxml"));
+                Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+                stage.setTitle("System Administrator Dashboard");
+                stage.setScene(new Scene(root));
+                stage.show();
+            }else {
                 showAlert("Incorrect Credentials", "Incorrect user ID or password.");
             }
         } catch (Exception e) {
