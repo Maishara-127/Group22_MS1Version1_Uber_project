@@ -95,11 +95,11 @@ public class SystemAdministrator implements Serializable {
             }
         }
     }
-    public String optimizePaymentProcessing(boolean isInstantRefundEnabled, boolean isTest) {
-        if (isTest) {
-            return isInstantRefundEnabled ? "Refund processed instantly." : "Refund will be processed later.";
+    public String optimizePaymentProcessing(boolean isInstantRefundEnabled) {
+        if (isInstantRefundEnabled) {
+            return  "Refund processed instantly.";
         } else {
-            return isInstantRefundEnabled ? "Instant refund enabled." : "Instant refund disabled.";
+            return "Refund will be processed later.";
         }
 
     }
@@ -119,7 +119,7 @@ public class SystemAdministrator implements Serializable {
              oos.writeObject(report);
             return true;
         } catch (Exception e) {
-            System.out.println("Error saving report: " + e.getMessage());
+            System.out.println( e.getMessage());
             return false;
         }
     }

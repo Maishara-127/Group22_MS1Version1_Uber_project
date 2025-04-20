@@ -28,15 +28,6 @@ public class OptimizePaymentProcessingController {
     }
 
     @FXML
-    public void testRefundButtonOnAction(ActionEvent actionEvent) {
-        if (instantRefundCheckbox.isSelected()) {
-            statusLabel.setText("Refund processed instantly.");
-        } else {
-            statusLabel.setText("Refund will be processed later.");
-        }
-    }
-
-    @FXML
     public void backButtonOnAction(ActionEvent actionEvent) {
         try {
             Parent root = FXMLLoader.load(getClass().getResource("/com/example/group22_uber_2312262_2321374_2330201_2310256/maintainCustomerAndDriverSupportSystemView.fxml"));

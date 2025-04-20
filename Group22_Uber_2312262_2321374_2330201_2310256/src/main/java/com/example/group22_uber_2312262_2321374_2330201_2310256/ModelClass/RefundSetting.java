@@ -5,6 +5,7 @@ public class RefundSetting {
 
 
     public RefundSetting(boolean instantRefundEnabled) {
+
         this.instantRefundEnabled = instantRefundEnabled;
     }
 
