@@ -23,14 +23,14 @@ public class OptimizePaymentProcessingController {
     public void saveSettingButtonOnAction() {
         boolean isChecked = instantRefundCheckbox.isSelected();
         SystemAdministrator systemAdministrator = new SystemAdministrator("admin", 123, "admin@uber.com", "1234567890");
-        String result = systemAdministrator.optimizePaymentProcessing(isChecked, false);
+        String result = systemAdministrator.optimizePaymentProcessing(isChecked);
         statusLabel.setText(result);
     }
 
     @FXML
     public void backButtonOnAction(ActionEvent actionEvent) {
         try {
-            Parent root = FXMLLoader.load(getClass().getResource("/com/example/group22_uber_2312262_2321374_2330201_2310256/maintainCustomerAndDriverSupportSystemView.fxml"));
+            Parent root = FXMLLoader.load(getClass().getResource("/com/example/group22_uber_2312262_2321374_2330201_2310256/registeredDriverPassengerView.fxml"));
             Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
             stage.setTitle("Maintain Customer and Driver Support System");
             stage.setScene(new Scene(root));

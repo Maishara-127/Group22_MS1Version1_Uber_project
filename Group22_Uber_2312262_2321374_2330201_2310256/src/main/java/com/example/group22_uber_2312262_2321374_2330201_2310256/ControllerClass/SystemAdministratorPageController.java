@@ -105,19 +105,6 @@ public class SystemAdministratorPageController
     }
 
     @javafx.fxml.FXML
-    public void MaintainCustomerAndDriverSupportSystemButtonOnAction(ActionEvent actionEvent) {
-        try {
-            Parent root = FXMLLoader.load(getClass().getResource("/com/example/group22_uber_2312262_2321374_2330201_2310256/adjustMarketingBudgetView.fxml"));
-            Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
-            stage.setTitle("Adjust Marketing Budget");
-            stage.setScene(new Scene(root));
-            stage.show();
-        } catch (Exception e) {
-            showError( e.getMessage());
-        }
-    }
-
-    @javafx.fxml.FXML
     public void ReduceAppDataConsumptionButtonOnAction(ActionEvent actionEvent) {
         try {
             Parent root = FXMLLoader.load(getClass().getResource("/com/example/group22_uber_2312262_2321374_2330201_2310256/adjustMarketingBudgetView.fxml"));
@@ -135,5 +122,18 @@ public class SystemAdministratorPageController
         alert.setTitle("Error");
         alert.setContentText("Failed to load page " + " Error: " + errorMessage);
         alert.showAndWait();
+    }
+
+    @javafx.fxml.FXML
+    public void DisplayRegisteredDriverAndPassengerButtonOnAction(ActionEvent actionEvent) {
+        try {
+            Parent root = FXMLLoader.load(getClass().getResource("/com/example/group22_uber_2312262_2321374_2330201_2310256/registeredDriverPassengerView.fxml"));
+            Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+            stage.setTitle("Adjust Marketing Budget");
+            stage.setScene(new Scene(root));
+            stage.show();
+        } catch (Exception e) {
+            showError( e.getMessage());
+        }
     }
 }

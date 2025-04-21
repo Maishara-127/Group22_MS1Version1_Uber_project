@@ -2,14 +2,14 @@ package com.example.group22_uber_2312262_2321374_2330201_2310256.ModelClass;
 
 import java.io.Serializable;
 
-public class User implements Serializable{
+public class UserInfo implements Serializable{
     private String name;
     private String id;
     private String email;
     private String role;
 
 
-    public User(String name, String id, String email, String role) {
+    public UserInfo(String name, String id, String email, String role) {
         this.name = name;
         this.id = id;
         this.email = email;

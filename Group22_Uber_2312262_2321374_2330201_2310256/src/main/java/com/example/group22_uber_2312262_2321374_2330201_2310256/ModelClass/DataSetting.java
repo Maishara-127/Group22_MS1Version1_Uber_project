@@ -26,9 +26,9 @@ public class DataSetting {
 
     public String getDataUsageReport() {
         if (lowDataMode) {
-            return "Estimated data saved: 45%";
+            return "Low data mode is on. Data usage is limited.";
         } else {
-            return "Low Data Mode is off. No data saved.";
+            return "Low data mode is off. No data saved.";
         }
     }
 }

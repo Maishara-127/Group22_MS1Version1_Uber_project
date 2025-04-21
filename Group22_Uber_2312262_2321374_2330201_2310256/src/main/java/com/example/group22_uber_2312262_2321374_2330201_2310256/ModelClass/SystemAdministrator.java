@@ -104,7 +104,7 @@ public class SystemAdministrator implements Serializable {
 
     }
 
-    public boolean manageUserAccess(User user, String newRole) {
+    public boolean manageUserAccess(UserInfo user, String newRole) {
         if (user != null && newRole != null && !newRole.isEmpty()) {
             user.setRole(newRole);
             return true;
@@ -147,5 +147,8 @@ public class SystemAdministrator implements Serializable {
         }
         return false;
 
+    }
+    public ArrayList<RegisteredUser> displayRegisteredDeriversAndPassengers(String type){
+        return DummyRegisteredUserData.getFakeUsers(type);
     }
 }

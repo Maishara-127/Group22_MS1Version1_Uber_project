@@ -1,8 +1,8 @@
 package com.example.group22_uber_2312262_2321374_2330201_2310256.ControllerClass;
 
 import com.example.group22_uber_2312262_2321374_2330201_2310256.ModelClass.SystemAdministrator;
-import com.example.group22_uber_2312262_2321374_2330201_2310256.ModelClass.User;
-import com.example.group22_uber_2312262_2321374_2330201_2310256.ModelClass.UserDummyClass;
+import com.example.group22_uber_2312262_2321374_2330201_2310256.ModelClass.UserInfo;
+import com.example.group22_uber_2312262_2321374_2330201_2310256.ModelClass.DummyUserInfo;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -26,8 +26,8 @@ public class ManageUserAccessController implements Serializable {
     @FXML
     private ComboBox<String> roleComboBox;
 
-    private User user;
-    private User selectedUser;
+    private UserInfo user;
+    private UserInfo selectedUser;
 
     @FXML
     public void initialize() {
@@ -37,7 +37,7 @@ public class ManageUserAccessController implements Serializable {
     @FXML
     public void searchButtonOnAction(ActionEvent actionEvent) {
         String input = searchField.getText();
-        selectedUser = UserDummyClass.getUserByIdOrEmail(input);
+        selectedUser = DummyUserInfo.getUserByIdOrEmail(input);
 
         if (selectedUser != null) {
             nameLabel.setText(selectedUser.getName());
