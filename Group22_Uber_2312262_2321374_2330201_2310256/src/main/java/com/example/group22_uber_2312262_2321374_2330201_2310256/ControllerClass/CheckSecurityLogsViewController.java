@@ -25,7 +25,7 @@ public class CheckSecurityLogsViewController {
 
     @FXML
     public void openSecurityLogButtonOnAction(ActionEvent actionEvent) {
-        String logs = systemAdministrator.checkSecurityLogs(null); // No criteria for fetching all logs
+        String logs = systemAdministrator.checkSecurityLogs(null);
         logsLabel.setText(logs);
         statusLabel.setText("Logs fetched.");
     }

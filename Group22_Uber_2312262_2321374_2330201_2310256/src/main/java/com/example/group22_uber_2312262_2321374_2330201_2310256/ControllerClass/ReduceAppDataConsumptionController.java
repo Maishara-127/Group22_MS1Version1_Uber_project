@@ -1,5 +1,6 @@
 package com.example.group22_uber_2312262_2321374_2330201_2310256.ControllerClass;
 
+import com.example.group22_uber_2312262_2321374_2330201_2310256.ModelClass.SystemAdministrator;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
@@ -28,8 +29,8 @@ public class ReduceAppDataConsumptionController {
     @javafx.fxml.FXML
     public void saveSettingButtonOnAction(ActionEvent actionEvent) {
         boolean selected = lowDataModeCheckBox.isSelected();
-        dataSetting.setLowDataMode(selected);
-        statusLabel.setText("Settings saved.");
+        SystemAdministrator systemAdmin = new SystemAdministrator("Admin", 1, "System Admin", "admin@uber.com");
+        systemAdmin.reduceAppDataConsumption(selected);
     }
     @javafx.fxml.FXML
     public void checkDataUsageButtonOnAction(ActionEvent actionEvent) {

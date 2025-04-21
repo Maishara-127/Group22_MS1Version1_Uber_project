@@ -141,7 +141,11 @@ public class SystemAdministrator implements Serializable {
         return result;
     }
 
-    public void reduceAppDataConsumption(){
+    public boolean reduceAppDataConsumption(boolean lowDataMode){
+        if(lowDataMode){
+            return true;
+        }
+        return false;
 
     }
 }
