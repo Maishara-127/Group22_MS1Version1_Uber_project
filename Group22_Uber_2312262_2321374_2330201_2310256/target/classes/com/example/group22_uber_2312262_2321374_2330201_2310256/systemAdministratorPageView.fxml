@@ -9,7 +9,7 @@
    <children>
       <Label prefHeight="413.0" prefWidth="205.0" style="-fx-background-color: grey;" />
       <Button mnemonicParsing="false" onAction="#ManageUserAccessButtonOnAction" prefHeight="25.0" prefWidth="205.0" text="ManageUserAccess" />
-      <Button layoutY="50.0" mnemonicParsing="false" onAction="#MaintainCustomerAndDriverSupportSystemButtonOnAction" prefHeight="25.0" prefWidth="205.0" text="MaintainCustomerAndDriverSupportSystem" />
+      <Button layoutY="50.0" mnemonicParsing="false" onAction="#DisplayRegisteredDriverAndPassengerButtonOnAction" prefHeight="25.0" prefWidth="205.0" text="DisplayRegisteredDriverAndPassenger" />
       <Button layoutY="104.0" mnemonicParsing="false" onAction="#OptimizePaymentProccesingButtonOnAction" prefHeight="25.0" prefWidth="205.0" text="OptimizePaymentProccesing" />
       <Button layoutY="161.0" mnemonicParsing="false" onAction="#ReduceAppDataConsumptionButtonOnAction" prefHeight="25.0" prefWidth="205.0" text="ReduceAppDataConsumption" />
       <Button layoutY="217.0" mnemonicParsing="false" onAction="#CheckSystemUptimeButtonOnAction" prefHeight="25.0" prefWidth="205.0" text="CheckSystemUptime" />

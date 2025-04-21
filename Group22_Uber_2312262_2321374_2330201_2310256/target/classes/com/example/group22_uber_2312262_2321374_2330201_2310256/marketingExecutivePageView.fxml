@@ -12,7 +12,7 @@
       <Button layoutY="46.0" mnemonicParsing="false" onAction="#updateSocialMediaLinkOnAction" prefHeight="31.0" prefWidth="196.0" style="-fx-background-color: Gray;" text="UpdateSocialMediaLink" />
       <Button layoutY="97.0" mnemonicParsing="false" onAction="#scheduleSocialMediaPost" prefHeight="31.0" prefWidth="196.0" style="-fx-background-color: Gray;" text="ScheduleSocialMediaPost" />
       <Button layoutY="150.0" mnemonicParsing="false" onAction="#SendEmailCampaignButtonOnAction" prefHeight="31.0" prefWidth="196.0" style="-fx-background-color: gray;" text="SendEmailCampaign" />
-      <Button layoutY="250.0" mnemonicParsing="false" onAction="#TrackPerformanceMarketingCampaignButtonOnAction" prefHeight="31.0" prefWidth="196.0" style="-fx-background-color: gray;" text="TrackPerformanceMarketingCampaign" />
+      <Button layoutY="250.0" mnemonicParsing="false" onAction="#TrackRatingAndFeedback" prefHeight="31.0" prefWidth="196.0" style="-fx-background-color: gray;" text="TrackRatingAndFeedback" />
       <Button layoutY="298.0" mnemonicParsing="false" onAction="#MonitorUserEngagementTrendButtonOnAction" prefHeight="31.0" prefWidth="196.0" style="-fx-background-color: gray;" text="MonitorUserEngagementTrend" />
       <Button layoutY="346.0" mnemonicParsing="false" onAction="#AdjustMarketingBudgetButtonOnAction" prefHeight="31.0" prefWidth="196.0" style="-fx-background-color: gray;" text="AdjustMarketingBudget" />
       <Label layoutX="300.0" layoutY="175.0" text="Marketing Executive">
