@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="378.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.group22_uber_2312262_2321374_2330201_2310256.ControllerClass.MarketingExecutivePageViewController">
+   <children>
+      <Label fx:id="buttonBackgroundLabel" prefHeight="378.0" prefWidth="196.0" style="-fx-border-color: gray; -fx-border-color: ;" />
+      <Button layoutY="-2.0" mnemonicParsing="false" onAction="#createDiscountCodeButtonOnAction" prefHeight="31.0" prefWidth="196.0" style="-fx-background-color: gray;" text="CreateDiscountCode" />
+      <Button layoutY="46.0" mnemonicParsing="false" onAction="#updateSocialMediaLinkOnAction" prefHeight="31.0" prefWidth="196.0" style="-fx-background-color: Gray;" text="UpdateSocialMediaLink" />
+      <Button layoutY="97.0" mnemonicParsing="false" onAction="#scheduleSocialMediaPost" prefHeight="31.0" prefWidth="196.0" style="-fx-background-color: Gray;" text="ScheduleSocialMediaPost" />
+      <Button layoutY="150.0" mnemonicParsing="false" onAction="#SendEmailCampaignButtonOnAction" prefHeight="31.0" prefWidth="196.0" style="-fx-background-color: gray;" text="SendEmailCampaign" />
+      <Button layoutY="250.0" mnemonicParsing="false" onAction="#TrackRatingAndFeedback" prefHeight="31.0" prefWidth="196.0" style="-fx-background-color: gray;" text="TrackRatingAndFeedback" />
+      <Button layoutY="298.0" mnemonicParsing="false" onAction="#MonitorUserEngagementTrendButtonOnAction" prefHeight="31.0" prefWidth="196.0" style="-fx-background-color: gray;" text="MonitorUserEngagementTrend" />
+      <Button layoutY="346.0" mnemonicParsing="false" onAction="#AdjustMarketingBudgetButtonOnAction" prefHeight="31.0" prefWidth="196.0" style="-fx-background-color: gray;" text="AdjustMarketingBudget" />
+      <Label layoutX="300.0" layoutY="175.0" text="Marketing Executive">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+      <Button layoutY="202.0" mnemonicParsing="false" onAction="#PromoteNewServiceButtonOnAction" prefHeight="31.0" prefWidth="196.0" style="-fx-background-color: gray;" text="PromoteNewService" />
+      <Button layoutX="530.0" layoutY="326.0" mnemonicParsing="false" onAction="#backButtonOnAction" prefHeight="39.0" prefWidth="55.0" style="-fx-background-color: White;" text="&lt;-">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font></Button>
+   </children>
+</AnchorPane>
