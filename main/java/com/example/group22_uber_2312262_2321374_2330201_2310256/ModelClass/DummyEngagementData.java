@@ -6,10 +6,10 @@ import java.util.ArrayList;
 public class DummyEngagementData {
     public static ArrayList<UserEngagementTrend> getDummyTrends() {
         ArrayList<UserEngagementTrend> list = new ArrayList<>();
-        LocalDate today = LocalDate.getValue();
-        list.add(new UserEngagementTrend("Nujat", today, 35));
-        list.add(new UserEngagementTrend("Maishara", today, 20));
-        list.add(new UserEngagementTrend("Hasib", today, 15));
+        LocalDate date = LocalDate.getValue();
+        list.add(new UserEngagementTrend("Nujat", date, 35));
+        list.add(new UserEngagementTrend("Maishara", date, 20));
+        list.add(new UserEngagementTrend("Hasib", date, 15));
         return list;
     }
 }
