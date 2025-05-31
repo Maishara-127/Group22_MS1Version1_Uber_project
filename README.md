@@ -6,24 +6,24 @@ The system includes multiple user roles. But my contribution focused on simulati
 
 Marketing Executive – Manages promotional strategies and customer engagement by performing tasks such as:
 
-• Creating discount codes
-• Updating social media links
-• Scheduling automated social media posts
-• Sending email campaigns
-• Tracking ratings and feedback
-• Promoting new services
-• Monitoring user engagement trends
-• Adjusting the marketing budget
+1. Creating discount codes
+2. Updating social media links
+3. Scheduling automated social media posts
+4. Sending email campaigns
+5. Tracking ratings and feedback
+6. Promoting new services
+7. Monitoring user engagement trends
+8. Adjusting the marketing budget
 
 System Administrator – Ensures the app’s technical stability and data integrity through responsibilities like:
 
-• Checking system uptime
-• Managing user access
-• Displaying registered drivers and passengers
-• Optimizing payment processing
-• Reducing app data consumption
-• Backing up important files
-• Checking app version and updates
-• Reviewing security logs
+1. Checking system uptime
+2. Managing user access
+3. Displaying registered drivers and passengers
+4. Optimizing payment processing
+5. Reducing app data consumption
+6. Backing up important files
+7. Checking app version and updates
+8. Reviewing security logs
 
 This project effectively demonstrates how each role within the Uber App ecosystem contributes to delivering a seamless and efficient ride-sharing experience.
