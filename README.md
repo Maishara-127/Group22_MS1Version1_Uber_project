@@ -4,7 +4,7 @@ This project simulates the core functionalities of the Uber App, with a focus on
 
 The system includes multiple user roles. But my contribution focused on simulating two key roles:
 
-Marketing Executive – Manages promotional strategies and customer engagement by performing tasks such as:
+Marketing Executive– Manages promotional strategies and customer engagement by performing tasks such as:
 
 1. Creating discount codes
 2. Updating social media links
@@ -15,7 +15,7 @@ Marketing Executive – Manages promotional strategies and customer engagement b
 7. Monitoring user engagement trends
 8. Adjusting the marketing budget
 
-System Administrator – Ensures the app’s technical stability and data integrity through responsibilities like:
+System Administrator– Ensures the app’s technical stability and data integrity through responsibilities like:
 
 1. Checking system uptime
 2. Managing user access
